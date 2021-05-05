@@ -20,15 +20,26 @@
     var CONFIG = {"hostname":"niubl.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="风清月朗居">
-<meta property="og:url" content="https://niubl.github.io/tags/CVE-2020-8287/index.html">
+  <meta name="description" content="漏洞链接 PHP 5.4.34 unserialize UAF exploit http:&#x2F;&#x2F;blog.knownsec.com&#x2F;2016&#x2F;06&#x2F;php-5-4-34-unserialize-uaf-exploit&#x2F;   Samba 3.0.37 EnumPrinters 堆内存溢出漏洞 http:&#x2F;&#x2F;blog.knownsec.com&#x2F;2015&#x2F;05&#x2F;samba-3-0-37-enumprint">
+<meta property="og:type" content="article">
+<meta property="og:title" content="早前の研究">
+<meta property="og:url" content="https://niubl.github.io/2017/12/01/previous-research/index.html">
 <meta property="og:site_name" content="风清月朗居">
+<meta property="og:description" content="漏洞链接 PHP 5.4.34 unserialize UAF exploit http:&#x2F;&#x2F;blog.knownsec.com&#x2F;2016&#x2F;06&#x2F;php-5-4-34-unserialize-uaf-exploit&#x2F;   Samba 3.0.37 EnumPrinters 堆内存溢出漏洞 http:&#x2F;&#x2F;blog.knownsec.com&#x2F;2015&#x2F;05&#x2F;samba-3-0-37-enumprint">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2017-11-30T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-05-05T06:02:14.000Z">
 <meta property="article:author" content="niubl">
+<meta property="article:tag" content="NodeJS">
+<meta property="article:tag" content="PHP">
+<meta property="article:tag" content="Samba">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="ImageMagick">
+<meta property="article:tag" content="路由器">
+<meta property="article:tag" content="Dokuwiki">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://niubl.github.io/tags/CVE-2020-8287/">
+<link rel="canonical" href="https://niubl.github.io/2017/12/01/previous-research/">
 
 
 <script id="page-configurations">
@@ -36,12 +47,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>标签: CVE-2020-8287 | 风清月朗居</title>
+  <title>早前の研究 | 风清月朗居</title>
   
 
 
@@ -154,51 +165,149 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">CVE-2020-8287
-          <small>标签</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://niubl.github.io/2017/12/01/previous-research/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="niubl">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="风清月朗居">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          早前の研究
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-12-01 00:00:00" itemprop="dateCreated datePublished" datetime="2017-12-01T00:00:00+08:00">2017-12-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-05-05 14:02:14" itemprop="dateModified" datetime="2021-05-05T14:02:14+08:00">2021-05-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/" itemprop="url" rel="index"><span itemprop="name">漏洞分析</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+        <h2 id="漏洞链接"><a href="#漏洞链接" class="headerlink" title="漏洞链接"></a>漏洞链接</h2><ul>
+<li>PHP 5.4.34 unserialize UAF exploit<ul>
+<li><a target="_blank" rel="noopener" href="http://blog.knownsec.com/2016/06/php-5-4-34-unserialize-uaf-exploit/">http://blog.knownsec.com/2016/06/php-5-4-34-unserialize-uaf-exploit/</a></li>
+</ul>
+</li>
+<li>Samba 3.0.37 EnumPrinters 堆内存溢出漏洞<ul>
+<li><a target="_blank" rel="noopener" href="http://blog.knownsec.com/2015/05/samba-3-0-37-enumprinters-memory-corruption/">http://blog.knownsec.com/2015/05/samba-3-0-37-enumprinters-memory-corruption/</a></li>
+</ul>
+</li>
+<li>Linux drm_legacy_lock_free 空指针引用bug分析<ul>
+<li><a target="_blank" rel="noopener" href="http://blog.knownsec.com/2015/09/linux-drm_legacy_lock_free-null-pointer-dereference-analysis/">http://blog.knownsec.com/2015/09/linux-drm_legacy_lock_free-null-pointer-dereference-analysis/</a></li>
+</ul>
+</li>
+<li>PHP 7 ZEND_HASH_IF_FULL_DO_RESIZE Use After Free 漏洞分析<ul>
+<li><a target="_blank" rel="noopener" href="http://blog.knownsec.com/2015/08/php-7-zend_hash_if_full_do_resize-use-after-free-analysis/">http://blog.knownsec.com/2015/08/php-7-zend_hash_if_full_do_resize-use-after-free-analysis/</a></li>
+</ul>
+</li>
+<li>ImageMagick popen_utf8命令注入 漏洞报告<ul>
+<li><a target="_blank" rel="noopener" href="http://blog.knownsec.com/2016/05/imagemagick-popen-remote-command-execution-vulnerability/">http://blog.knownsec.com/2016/05/imagemagick-popen-remote-command-execution-vulnerability/</a></li>
+</ul>
+</li>
+<li>华硕路由器9999端口远程命令执行研究报告<ul>
+<li><a target="_blank" rel="noopener" href="http://blog.knownsec.com/2015/01/report-of-asua-router-9999-port-remote-command-execution-v1/">http://blog.knownsec.com/2015/01/report-of-asua-router-9999-port-remote-command-execution-v1/</a></li>
+</ul>
+</li>
+<li>DokuWiki fetch.php SSRF漏洞与tok安全验证绕过分析<ul>
+<li><a target="_blank" rel="noopener" href="https://paper.seebug.org/230/">https://paper.seebug.org/230/</a></li>
+</ul>
+</li>
+<li>Node.js CVE-2017-14849 漏洞分析<ul>
+<li><a target="_blank" rel="noopener" href="https://security.tencent.com/index.php/blog/msg/121">https://security.tencent.com/index.php/blog/msg/121</a></li>
+</ul>
+</li>
+</ul>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-05-02T00:00:00+08:00"
-              content="2021-05-02">
-          05-02
-        </time>
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="niubl 微信支付">
+        <p>微信支付</p>
       </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/05/02/http-request-smuggling-in-nodejs/" itemprop="url">
-            <span itemprop="name">HTTP Request Smuggling in NodeJS</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-    </div>
   </div>
-  
-  
-  
+</div>
 
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/NodeJS/" rel="tag"># NodeJS</a>
+              <a href="/tags/PHP/" rel="tag"># PHP</a>
+              <a href="/tags/Samba/" rel="tag"># Samba</a>
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+              <a href="/tags/ImageMagick/" rel="tag"># ImageMagick</a>
+              <a href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" rel="tag"># 路由器</a>
+              <a href="/tags/Dokuwiki/" rel="tag"># Dokuwiki</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/12/19/http-request-smuggling-in-ruby-webrick/" rel="next" title="HTTP Request Smuggling in ruby webrick">
+      HTTP Request Smuggling in ruby webrick <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
@@ -251,6 +360,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BC%8F%E6%B4%9E%E9%93%BE%E6%8E%A5"><span class="nav-number">1.</span> <span class="nav-text">漏洞链接</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
