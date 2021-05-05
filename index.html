@@ -160,6 +160,105 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://niubl.github.io/2021/05/04/research-on-ruby-command-injection-vulnerability/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="niubl">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="风清月朗居">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/05/04/research-on-ruby-command-injection-vulnerability/" class="post-title-link" itemprop="url">Ruby命令注入漏洞研究</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-05-04 09:12:00" itemprop="dateCreated datePublished" datetime="2021-05-04T09:12:00+08:00">2021-05-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-05-05 10:35:48" itemprop="dateModified" datetime="2021-05-05T10:35:48+08:00">2021-05-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/" itemprop="url" rel="index"><span itemprop="name">漏洞分析</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="漏洞摘要"><a href="#漏洞摘要" class="headerlink" title="漏洞摘要"></a>漏洞摘要</h2><p>前些天看到ruby又有命令注入漏洞，CVE-2021-31799，看了下原因比较简单，感慨这个漏洞我应该能提前发现，只要自己够仔细，然而呢，马大哈本性暴漏。<br>复现这个漏洞比较简单，在目录下写一个<code>|$(whoami)-tags</code>的文件，然后执行rdoc命令，就能触发whoami命令，如图：</p>
+<h2 id="漏洞分析"><a href="#漏洞分析" class="headerlink" title="漏洞分析"></a>漏洞分析</h2><p>这个漏洞的原因不再分析了，ruby官方公告写的很清楚，调用kernel#open()函数导致的，ruby历史上也多次出现过类似命令注入问题，然而为什么这个函数能执行命令？还有哪些函数同样具有此类功能，需要我们继续探讨下。</p>
+<h3 id="为什么"><a href="#为什么" class="headerlink" title="为什么"></a>为什么</h3><p>查看ruby文档中对kernel#open函数的描述<code>If path starts with a pipe character (&quot;|&quot;), a subprocess is created, connected to the caller by a pair of pipes.</code>，看来是提供了一种类似popen的执行方式，所以他可以执行命令，使用方法参考Ruby文档：<a target="_blank" rel="noopener" href="https://ruby-doc.org/core-3.0.1/Kernel.html#method-i-open">https://ruby-doc.org/core-3.0.1/Kernel.html#method-i-open</a> 。</p>
+<h3 id="还有谁"><a href="#还有谁" class="headerlink" title="还有谁"></a>还有谁</h3><p>搜索ruby源代码check_pipe_command函数，可以发现有两处调用了他，详细分析下，除了open函数外，还有6个ruby函数具有类似功能：</p>
+<ul>
+<li>IO.binread</li>
+<li>IO.binwrite</li>
+<li>IO.read</li>
+<li>IO.write</li>
+<li>IO.readlines</li>
+<li>IO.foreach</li>
+</ul>
+<p>以后在审计ruby代码的时候记得审计这些函数，他们也可以执行命令。</p>
+<p>除此之外，其他可以执行命令的ruby函数也顺便记录下：</p>
+<ul>
+<li>system</li>
+<li>exec</li>
+<li>spawn</li>
+<li>IO.popen</li>
+<li>``</li>
+<li>Open3.popen2</li>
+<li>Open3.popene</li>
+<li>Open3.popen3</li>
+<li>Open3.*</li>
+</ul>
+<p>以上都是基于ruby 3.0.1，老版本可能有更多方法。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://niubl.github.io/2021/05/02/http-request-smuggling-in-nodejs/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -453,20 +552,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
