@@ -160,6 +160,81 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://niubl.github.io/2021/07/17/redmine-4.2.0-arbitrary-file-read/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="niubl">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="风清月朗居">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/17/redmine-4.2.0-arbitrary-file-read/" class="post-title-link" itemprop="url">Redmine 4.2.0 任意文件读取漏洞</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-07-17 00:00:00 / 修改时间：21:22:11" itemprop="dateCreated datePublished" datetime="2021-07-17T00:00:00+08:00">2021-07-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98/" itemprop="url" rel="index"><span itemprop="name">漏洞挖掘</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="漏洞摘要"><a href="#漏洞摘要" class="headerlink" title="漏洞摘要"></a>漏洞摘要</h2><p>Remine 4.2.0中的SCM允许使用git做版本管理，然而在<code>repositories_controller.rb</code>控制器中的<code>diff</code>函数中，没有对外部参数<code>rev</code>和<code>rev_to</code>做合适校验，导致攻击者可以注入一些git参数，达到读取任意文件的目的。发现漏洞后正值HW敏感时期，提交给官方修复后没有公开POC，不过也简单，这里记录下。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/07/17/redmine-4.2.0-arbitrary-file-read/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://niubl.github.io/2021/05/04/research-on-ruby-command-injection-vulnerability/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -299,81 +374,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/05/02/http-request-smuggling-in-nodejs/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://niubl.github.io/2021/05/02/redmine-4.2.0-arbitrary-file-read/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="niubl">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="风清月朗居">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/02/redmine-4.2.0-arbitrary-file-read/" class="post-title-link" itemprop="url">Redmine 4.2.0 任意文件读取漏洞</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-05-02 00:00:00 / 修改时间：12:55:48" itemprop="dateCreated datePublished" datetime="2021-05-02T00:00:00+08:00">2021-05-02</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%BC%8F%E6%B4%9E%E6%8C%96%E6%8E%98/" itemprop="url" rel="index"><span itemprop="name">漏洞挖掘</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="漏洞摘要"><a href="#漏洞摘要" class="headerlink" title="漏洞摘要"></a>漏洞摘要</h2><p>待补充</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/05/02/redmine-4.2.0-arbitrary-file-read/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
