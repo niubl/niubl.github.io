@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://niubl.github.io/2023/08/13/chrome_headless_disable_web_security/1.png">
 <meta property="og:image" content="https://niubl.github.io/2023/08/13/chrome_headless_disable_web_security/2.png">
 <meta property="article:published_time" content="2023-08-12T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-08-13T03:10:29.092Z">
+<meta property="article:modified_time" content="2023-08-13T10:51:25.384Z">
 <meta property="article:author" content="niubl">
 <meta property="article:tag" content="chrome">
 <meta name="twitter:card" content="summary">
@@ -193,7 +193,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-08-13 00:00:00 / 修改时间：11:10:29" itemprop="dateCreated datePublished" datetime="2023-08-13T00:00:00+08:00">2023-08-13</time>
+              <time title="创建时间：2023-08-13 00:00:00 / 修改时间：18:51:25" itemprop="dateCreated datePublished" datetime="2023-08-13T00:00:00+08:00">2023-08-13</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -221,7 +221,7 @@
 
 <h2 id="何为同源策略？"><a href="#何为同源策略？" class="headerlink" title="何为同源策略？"></a>何为同源策略？</h2><p>同源策略是一个重要的安全策略，它用于限制一个origin的文档或者它加载的脚本如何能与另一个源的资源进行交互。它能帮助阻隔恶意文档，减少可能被攻击的媒介。</p>
 <p>同源的定义：如果两个 URL 的 protocol、port (en-US) (如果有指定的话) 和 host 都相同的话，则这两个 URL 是同源。</p>
-<h2 id="禁用disable-web-security的实际风险是什么？"><a href="#禁用disable-web-security的实际风险是什么？" class="headerlink" title="禁用disable-web-security的实际风险是什么？"></a>禁用disable-web-security的实际风险是什么？</h2><p>之前在了解disable-web-security参数的安全问题前，搜索过网上一些资料，大概是关于chrome headless安全配置的问题，主要涉及下面几方面：</p>
+<h2 id="开启disable-web-security的实际风险是什么？"><a href="#开启disable-web-security的实际风险是什么？" class="headerlink" title="开启disable-web-security的实际风险是什么？"></a>开启disable-web-security的实际风险是什么？</h2><p>之前在了解disable-web-security参数的安全问题前，搜索过网上一些资料，大概是关于chrome headless安全配置的问题，主要涉及下面几方面：</p>
 <ul>
 <li>chrome headless 调试端口</li>
 <li>chrome headless 低版本</li>
@@ -334,7 +334,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BC%8F%E6%B4%9E%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">漏洞摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%95%E4%B8%BA%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">何为同源策略？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A6%81%E7%94%A8disable-web-security%E7%9A%84%E5%AE%9E%E9%99%85%E9%A3%8E%E9%99%A9%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">禁用disable-web-security的实际风险是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A3%8E%E9%99%A9%E8%AF%81%E6%98%8E"><span class="nav-number">4.</span> <span class="nav-text">风险证明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E8%AF%AD"><span class="nav-number">5.</span> <span class="nav-text">结语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">6.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BC%8F%E6%B4%9E%E6%91%98%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">漏洞摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%95%E4%B8%BA%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">何为同源策略？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%90%AFdisable-web-security%E7%9A%84%E5%AE%9E%E9%99%85%E9%A3%8E%E9%99%A9%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">开启disable-web-security的实际风险是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A3%8E%E9%99%A9%E8%AF%81%E6%98%8E"><span class="nav-number">4.</span> <span class="nav-text">风险证明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E8%AF%AD"><span class="nav-number">5.</span> <span class="nav-text">结语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">6.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
